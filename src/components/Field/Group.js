@@ -1,13 +1,12 @@
-import {useFormikContext} from "formik";
-import {Form} from "react-bootstrap";
-
-import Text from "./Text";
+import { useFormikContext } from "formik";
+import { Form } from "react-bootstrap";
 import Date from "./Date";
+import Icon from "./Icon";
+import Location from "./Location";
 import Number from "./Number";
 import Select from "./Select";
+import Text from "./Text";
 import Uploader from "./Uploader";
-import Location from "./Location";
-import Icon from "./Icon";
 
 const schemaProccessor = (parentNames, schema, selectedFields) => {
   const fieldArray = [];
@@ -22,8 +21,8 @@ const schemaProccessor = (parentNames, schema, selectedFields) => {
 
   if (isParent && schema.fields[parentNames[0]].type !== "object") {
     parentNames.map((key) => {
-      const {type} = schema.fields[key];
-      const {label, hidden, readOnly, component} = schema.fields[key].spec;
+      const { type } = schema.fields[key];
+      const { label, hidden, readOnly, component } = schema.fields[key].spec;
       fieldArray.push({
         name: key,
         ...{
@@ -31,8 +30,8 @@ const schemaProccessor = (parentNames, schema, selectedFields) => {
           label,
           hidden,
           readOnly,
-          component,
-        },
+          component
+        }
       });
     });
   } else {
@@ -53,11 +52,11 @@ const schemaProccessor = (parentNames, schema, selectedFields) => {
           parentName = parentName.match(/(?<name>[A-Z]\w+)\[([0-9])+]/).groups
             .name;
 
-        const {type} =
+        const { type } =
           schema.fields[parentName].type === "array"
             ? schema.fields[parentName].innerType.fields[key]
             : schema.fields[parentName].fields[key];
-        const {label, hidden, readOnly, component} =
+        const { label, hidden, readOnly, component } =
           schema.fields[parentName].type === "array"
             ? schema.fields[parentName].innerType.fields[key].spec
             : schema.fields[parentName].fields[key].spec;
@@ -75,8 +74,8 @@ const schemaProccessor = (parentNames, schema, selectedFields) => {
             label,
             hidden,
             readOnly,
-            component,
-          },
+            component
+          }
         });
       });
     });
@@ -93,17 +92,21 @@ const fieldCreator = {
   uploader: (props) => <Uploader key={props.name} {...props} />,
   location: (props) => <Location key={props.name} {...props} />,
   icon: (props) => <Icon key={props.name} {...props} />,
-  custom: ({component: {Body}, ...props}) => <Body {...props} />,
+  custom: ({ component: { Body }, ...props }) => <Body {...props} />
 };
 
-const Group = ({name, selectedFields, children}) => {
-  const {validationSchema: schema} = useFormikContext();
+const Group = ({ names, selectedFields, children }) => {
+  const { validationSchema: schema } = useFormikContext();
 
   return schema ? (
     <>
-      {schemaProccessor(name, schema, selectedFields).map(({type, ...rest}) =>
+      {schemaProccessor(
+        names,
+        schema,
+        selectedFields
+      ).map(({ type, ...rest }) =>
         fieldCreator[type](
-          rest.component ? {...rest, ...rest.component.props} : rest
+          rest.component ? { ...rest, ...rest.component.props } : rest
         )
       )}
     </>

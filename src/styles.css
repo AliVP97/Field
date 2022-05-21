@@ -1,4 +1,46 @@
-.App {
+#root {
+  direction: rtl;
   font-family: sans-serif;
   text-align: center;
+  padding: 25px;
+}
+
+#root > form {
+  display: flex;
+  flex-direction: column;
+  row-gap: 15px;
+}
+
+#root > form div {
+  display: flex;
+  flex-direction: column;
+  row-gap: 5px;
+}
+
+#root > form > div:last-child {
+  height: 200px;
+}
+
+#root .form-label {
+  font-size: 20px;
+  font-weight: bold;
+  padding: 5px;
+}
+
+#root .form-control {
+  font-size: 20px;
+  padding: 5px;
+  text-align: center;
+}
+
+/* Jalali Date Picker style override */
+.nYegl > label {
+  display: none;
+}
+.nYegl input {
+  text-align: center;
+}
+
+div.is-form-group {
+  font-size: 20px;
 }

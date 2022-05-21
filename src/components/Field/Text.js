@@ -34,7 +34,7 @@ const Text = ({ parentName, name, label, style, hidden, ...props }) => {
         value={
           parentName
             ? values[parentName] && name && values[parentName][name]
-            : name && values[name]
+            : name && values && values[name]
         }
         onChange={handleChange}
         onBlur={handleBlur}
