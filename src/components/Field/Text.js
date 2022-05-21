@@ -1,15 +1,20 @@
-import {useFormikContext} from "formik";
-import {Form} from "react-bootstrap";
+import { useFormikContext } from "formik";
+import { Form } from "react-bootstrap";
 
 import styles from "./styles";
 
-const Text = ({parentName, name, label, style, hidden, ...props}) => {
-  const {values, errors, touched, handleBlur, setFieldValue} =
-    useFormikContext();
+const Text = ({ parentName, name, label, style, hidden, ...props }) => {
+  const {
+    values,
+    errors,
+    touched,
+    handleBlur,
+    setFieldValue
+  } = useFormikContext();
 
   const fieldName = parentName ? parentName + "." + name : name;
 
-  const handleChange = ({target: {value}}) =>
+  const handleChange = ({ target: { value } }) =>
     value
       ? setFieldValue(fieldName, value)
       : (

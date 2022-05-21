@@ -1,23 +1,18 @@
 {
-  "name": "react",
+  "name": "field-component",
   "version": "1.0.0",
-  "description": "React example starter project",
-  "keywords": [
-    "react",
-    "starter"
-  ],
+  "description": "",
+  "keywords": [],
   "main": "src/index.js",
   "dependencies": {
-    "components": "0.1.0",
     "formik": "2.2.9",
     "jalali-react-datepicker": "1.2.1",
-    "mapbox-gl": "2.8.2",
-    "react": "18.0.0",
-    "react-bootstrap": "2.4.0",
-    "react-dom": "18.0.0",
-    "react-scripts": "4.0.0",
+    "mapbox-gl": "^1.13.1",
+    "react": "^17.0.0",
+    "react-bootstrap": "^2.2.3",
+    "react-dom": "^17.0.0",
+    "react-scripts": "5.0.0",
     "react-select": "5.3.2",
-    "utils": "0.3.1",
     "utm-latlng": "1.0.6",
     "yup": "0.32.11"
   },
@@ -31,10 +26,5 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
-  "browserslist": [
-    ">0.2%",
-    "not dead",
-    "not ie <= 11",
-    "not op_mini all"
-  ]
+  "browserslist": [">0.2%", "not dead", "not ie <= 11", "not op_mini all"]
 }
