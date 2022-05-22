@@ -22,12 +22,14 @@ const schemaProccessor = (parentNames, schema, selectedFields) => {
   if (isParent && schema.fields[parentNames[0]].type !== "object") {
     parentNames.map((key) => {
       const { type } = schema.fields[key];
-      const { label, hidden, readOnly, component } = schema.fields[key].spec;
+      const { label, placeholder, hidden, readOnly, component } =
+        schema.fields[key].spec;
       fieldArray.push({
         name: key,
         ...{
           type,
           label,
+          placeholder,
           hidden,
           readOnly,
           component,
@@ -56,7 +58,7 @@ const schemaProccessor = (parentNames, schema, selectedFields) => {
           schema.fields[parentName].type === "array"
             ? schema.fields[parentName].innerType.fields[key]
             : schema.fields[parentName].fields[key];
-        const { label, hidden, readOnly, component } =
+        const { label, placeholder, hidden, readOnly, component } =
           schema.fields[parentName].type === "array"
             ? schema.fields[parentName].innerType.fields[key].spec
             : schema.fields[parentName].fields[key].spec;
@@ -72,6 +74,7 @@ const schemaProccessor = (parentNames, schema, selectedFields) => {
             parentName,
             type,
             label,
+            placeholder,
             hidden,
             readOnly,
             component,
