@@ -1,0 +1,765 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>&lt;Field /&gt;</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-opaquegray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="53142d11-701e-4d35-b664-e7d08656ab76" class="page sans"><header><h1 class="page-title">&lt;Field /&gt;</h1></header><div class="page-body"><p id="0649bfdc-21be-4b11-99b9-53540956ace2" class=""><code>&lt;Field /&gt;</code> component acts like a field in a form</p><nav id="11d81e5a-c77e-4b6e-9ca0-5b3798c0b66b" class="table_of_contents"><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#7b5d13f7-2359-46e8-80e4-5eb33c0fa8ac">Example</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#96388ccc-174b-4816-b062-29da4b4d3981">Code Sandbox</a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#25c67f74-bfaf-470e-8293-e18f3b249828">App.js</a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#3ebb6d61-1e6a-4564-b0ae-25f25cbc1390">validationSchema.js</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#03834f3c-b259-4426-bdd6-5fe5672196bd">Sub Components</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#aff0ddaf-5e2c-4707-80af-c74a73fda80e">&lt;Field.Text /&gt;</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#6f4a74a2-0a43-4874-9e0f-e14d3b9880c8">&lt;Field.Number /&gt;</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#3de1c222-41f9-4d27-a539-400860a661f5">&lt;Field.Date /&gt;</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#0770b0c7-d6dc-4dca-aa2d-137755ea4938">&lt;Field.Select /&gt;</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#13377081-16e2-4fa2-95c0-af2eabb9fefa">&lt;Field.Uploader /&gt;</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#3a3b59ad-7120-4d7d-86c4-469619d78e7c">&lt;Field.Icon/&gt;</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#9d338422-7d5a-4e37-adf6-920089163c32">&lt;Field.Location/&gt;</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#6a3ea4f6-9220-4c22-9b42-c407fdcc0d17">Callout Blocks</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#ae8d6689-bc24-420c-afbe-6ee97c87704a">Code Blocks</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#a4d301a1-91e4-4b46-bd6d-069f4ed0f09b">Organizing Pages</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#d539035e-caa9-4917-a284-c2bdbd97b755">Advanced Techniques</a></div></nav><h1 id="7b5d13f7-2359-46e8-80e4-5eb33c0fa8ac" class="">Example</h1><h2 id="96388ccc-174b-4816-b062-29da4b4d3981" class="">Code Sandbox</h2><figure id="6f068fb4-218d-4ebf-9c7c-75bf5c202cbc"><div class="source"><iframe src="https://codesandbox.io/embed/ecstatic-meadow-b31zxy?fontsize=14&hidenavigation=1&theme=dark"
+     style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
+     title="ecstatic-meadow-b31zxy"
+     allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+     sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+   ></iframe></div></figure><h3 id="25c67f74-bfaf-470e-8293-e18f3b249828" class="">App.js</h3><pre id="8131d177-c6ef-4e83-a6c3-2339453ba4d3" class="code"><code>import React, { useState } from &quot;react&quot;;
+
+import { Form, FormikProvider, useFormik } from &quot;formik&quot;;
+import validationSchema from &quot;./validationSchema&quot;;
+
+import Field from &quot;components/Field&quot;;
+
+const App = () =&gt; {
+  const [isFormGroup, setIsFormGroup] = useState(false);
+
+  const formik = useFormik({
+    // enable when you&#x27;re on a edit mode
+    // enableReinitialize: true,
+    initialValues: {},
+    validationSchema: validationSchema,
+  });
+
+  return (
+    &lt;FormikProvider value={{ validationSchema, ...formik }}&gt;
+      &lt;h2&gt;{isFormGroup ? &quot;&lt;Field.Group /&gt;&quot; : &quot;&lt;Field /&gt;&quot;}&lt;/h2&gt;
+      &lt;Form&gt;
+        {isFormGroup ? (
+          &lt;Field.Group
+            names={[&quot;firstName&quot;, &quot;workExperience&quot;, &quot;birthday&quot;, &quot;resume&quot;]}
+          /&gt;
+        ) : (
+          &lt;&gt;
+            {/* Regular Text Field */}
+            &lt;Field.Text
+              name=&quot;firstName&quot;
+              label=&quot;نام&quot;
+              placeholder=&quot;نام خود را وارد کنید&quot;
+            /&gt;
+
+            {/* Regular Number Field */}
+            &lt;Field.Number
+              name=&quot;workExperience&quot;
+              label=&quot;سابفه کار(سال)&quot;
+              placeholder=&quot;سابقه کار خود را وارد نمایید&quot;
+            /&gt;
+
+            {/* Date Field with date picker */}
+            &lt;Field.Date name=&quot;birthday&quot; label=&quot;تاریخ تولد&quot; /&gt;
+
+            {/* File Field */}
+            &lt;Field.Uploader
+              name=&quot;resume&quot;
+              label=&quot;رزومه&quot;
+              fileType=&quot;image&quot;
+              acceptFormat=&quot;image/*&quot;
+            /&gt;
+          &lt;/&gt;
+        )}
+      &lt;/Form&gt;
+      &lt;br /&gt;
+      &lt;div className=&quot;is-form-group&quot;&gt;
+        &lt;label htmlFor=&quot;isFormGroup&quot;&gt;Form Group Example&lt;/label&gt;
+        &lt;input
+          id=&quot;isFormGroup&quot;
+          type=&quot;checkbox&quot;
+          onChange={(e) =&gt; setIsFormGroup(e.target.checked === true)}
+        /&gt;
+      &lt;/div&gt;
+    &lt;/FormikProvider&gt;
+  );
+};
+
+export default App;</code></pre><h3 id="3ebb6d61-1e6a-4564-b0ae-25f25cbc1390" class="">validationSchema.js</h3><pre id="714d3465-cec8-4803-97fc-36b21a0a95af" class="code"><code>import Yup from &quot;adapters/yupAdapter&quot;;
+
+const schema = Yup.object().shape({
+  firstName: Yup.string()
+    .label(&quot;نام&quot;)
+    .placeholder(&quot;نام خود را وارد کنید&quot;)
+    .required(&quot;ورود نام الزامیست&quot;),
+  workExperience: Yup.number()
+    .label(&quot;سابفه کار(سال)&quot;)
+    .placeholder(&quot;سابقه کار خود را وارد نمایید&quot;)
+    .min(0, &quot;حداقل سال وارد شده برابر با صفر می باشد&quot;),
+  birthday: Yup.date().label(&quot;تاریخ تولد&quot;).required(&quot;&quot;),
+  resume: Yup.array()
+    .label(&quot;رزومه&quot;)
+    .of(Yup.mixed())
+    .fieldComponent({
+      type: &quot;uploader&quot;,
+      props: { fileType: &quot;image&quot;, acceptFormat: &quot;image/*&quot; },
+    }),
+});
+
+export default schema;</code></pre><h1 id="03834f3c-b259-4426-bdd6-5fe5672196bd" class="">Sub Components</h1><figure id="4fe2b2e5-65df-4f6b-9744-790e865924d8" class="link-to-page"><a href="Field%2053142d11701e4d35b664e7d08656ab76/Text%204fe2b2e565df4f6b9744790e865924d8.html">&lt;Text /&gt;</a></figure><figure id="a9e11559-0d75-4c4d-8f8d-fec8fc51e6b0" class="link-to-page"><a href="Field%2053142d11701e4d35b664e7d08656ab76/Number%20a9e115590d754c4d8f8dfec8fc51e6b0.html">&lt;Number /&gt;</a></figure><figure id="c014ea7b-e23f-4ee9-b21e-33d193e9357c" class="link-to-page"><a href="Field%2053142d11701e4d35b664e7d08656ab76/Date%20c014ea7be23f4ee9b21e33d193e9357c.html">&lt;Date /&gt;</a></figure><h1 id="aff0ddaf-5e2c-4707-80af-c74a73fda80e" class="">&lt;Field.Text /&gt;</h1><h1 id="6f4a74a2-0a43-4874-9e0f-e14d3b9880c8" class="">&lt;Field.Number /&gt;</h1><h1 id="3de1c222-41f9-4d27-a539-400860a661f5" class="">&lt;Field.Date /&gt;</h1><h1 id="0770b0c7-d6dc-4dca-aa2d-137755ea4938" class="">&lt;Field.Select /&gt;</h1><h1 id="13377081-16e2-4fa2-95c0-af2eabb9fefa" class="">&lt;Field.Uploader /&gt;</h1><h1 id="3a3b59ad-7120-4d7d-86c4-469619d78e7c" class="">&lt;Field.Icon/&gt;</h1><h1 id="9d338422-7d5a-4e37-adf6-920089163c32" class="">&lt;Field.Location/&gt;</h1><p id="cee5ccc8-08f9-46a0-99a1-32ee5a97f8cb" class="">You can add headings and subheadings in one of two ways:</p><p id="61bcdae5-3840-4aa4-9e8a-c2a921020f0d" class="">You can add headings and subheadings in one of two ways:</p><ul id="4ae26fcd-4e9f-43f5-89a2-8e8293c40b0e" class="bulleted-list"><li style="list-style-type:disc">Type <code>/heading</code> or <code>/h1</code>, <code>/h2</code>, or <code>/h3</code> to choose the heading size you want.</li></ul><ul id="f83026e4-5548-452b-843c-aa7c717a7cc9" class="bulleted-list"><li style="list-style-type:disc">Use Markdown shortcuts, like <code>#</code>, <code>##</code>, and <code>###</code>.  <ul id="a9d83be2-c7dd-4980-a7bb-295c858cad4f" class="bulleted-list"><li style="list-style-type:circle">Create inline code by wrapping text with <code>`</code> (or with the shortcut <code>cmd/ctrl + e</code>).</li></ul></li></ul><ul id="976fa18c-4d47-45d1-ae88-8f282b6b8037" class="toggle"><li><details open=""><summary>Toggle lists streamline your content. Click the arrow to open.</summary><ul id="55207c3b-7bfc-49d2-9a03-e786691fe32c" class="bulleted-list"><li style="list-style-type:disc">Click the arrow again to hide this content.</li></ul><ul id="3482b346-6ae0-4590-91c9-9e0b3bdb0664" class="bulleted-list"><li style="list-style-type:disc">Create a toggle by typing <code>/toggle</code> and pressing <code>enter</code>.</li></ul><ul id="3d6e7239-cecc-4396-afe9-2d5218fbdaf1" class="bulleted-list"><li style="list-style-type:disc">You can add anything to toggles, including images and embeds.</li></ul></details></li></ul><h2 id="6a3ea4f6-9220-4c22-9b42-c407fdcc0d17" class="">Callout Blocks</h2><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="0f6cbe5c-1782-4f07-b522-a4477a35d5dd"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%">Create a callout block like this by typing <code>/call</code> and pressing <code>enter</code>.
+Helpful for adding inline instructions, warnings, disclaimers, and tips.
+Change the emoji icon by clicking on it.</div></figure><h2 id="ae8d6689-bc24-420c-afbe-6ee97c87704a" class="">Code Blocks</h2><p id="e4db5278-9a6e-49b6-b7cc-a2b97bc5c72c" class="">You can add code notation to any Notion page:<div class="indented"><ul id="b82413b8-01e1-4d18-b89e-ecfb5249686f" class="bulleted-list"><li style="list-style-type:disc">Type <code>/code</code> and press <code>enter</code>.</li></ul><ul id="bb785dfc-e731-4b43-8525-87bdaaccfba7" class="bulleted-list"><li style="list-style-type:disc">Choose the language from the dropdown in the bottom right corner. </li></ul><ul id="c73a1cee-33c5-49c8-a80b-4caed21f243d" class="bulleted-list"><li style="list-style-type:disc">Here&#x27;s an example:</li></ul></div></p><pre id="10ecac08-4126-44c0-8677-671540f5a581" class="code"><code>Hover over this block to see the &lt;b&gt;Copy to Clipboard&lt;/b&gt; option!</code></pre><ul id="09f7728a-a3ae-4bda-a520-c3fef6224aea" class="bulleted-list"><li style="list-style-type:disc">Your teammates can select any code to comment on it.</li></ul><h2 id="a4d301a1-91e4-4b46-bd6d-069f4ed0f09b" class="">Organizing Pages</h2><p id="2392f2d3-3226-4374-be78-ff0cc447564f" class="">Instead of using folders, Notion lets you nest pages inside pages.</p><ul id="1b12d692-f33c-4a4e-8638-e389ba7b4a5d" class="bulleted-list"><li style="list-style-type:disc">Type <code>/page</code> and press <code>enter</code> to create a sub-page inside a page. Like this:</li></ul><h1 id="d539035e-caa9-4917-a284-c2bdbd97b755" class="">Advanced Techniques</h1><p id="47e96c91-0050-4ef9-a2bd-18e4bac5db8f" class="">Check out this <a href="https://www.notion.so/Writing-editing-basics-68c7c67047494fdb87d50185429df93e">Notion Editor 101</a> guide for more advanced tips and how-to&#x27;s.</p><p id="389131f8-9975-4373-bcc3-f8b2975a55f2" class="">
+</p></div></article></body></html>
