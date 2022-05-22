@@ -1,14 +1,12 @@
-# <Field />
+# \<Field />
 
 `<Field />` component acts like a field in a form
 
-# Example
+Let's check our **html Doc** [here](https://alivp97.github.io/Field/)
 
-## Code Sandbox
+## Example
 
-[https://codesandbox.io/embed/ecstatic-meadow-b31zxy?fontsize=14&hidenavigation=1&theme=dark](https://codesandbox.io/embed/ecstatic-meadow-b31zxy?fontsize=14&hidenavigation=1&theme=dark)
-
-### App.js
+#### App.js
 
 ```jsx
 import React, { useState } from "react";
@@ -81,7 +79,7 @@ const App = () => {
 export default App;
 ```
 
-### validationSchema.js
+#### validationSchema.js
 
 ```jsx
 import Yup from "adapters/yupAdapter";
@@ -108,7 +106,11 @@ const schema = Yup.object().shape({
 export default schema;
 ```
 
-# Sub Components
+### Code Sandbox
+
+[![Edit ecstatic-meadow-b31zxy](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/ecstatic-meadow-b31zxy?fontsize=14&hidenavigation=1&theme=dark)
+
+## Sub Components
 
 [<Text />](Field%2053142d11701e4d35b664e7d08656ab76/Text%204fe2b2e565df4f6b9744790e865924d8.md)
 
@@ -116,19 +118,19 @@ export default schema;
 
 [<Date />](Field%2053142d11701e4d35b664e7d08656ab76/Date%20c014ea7be23f4ee9b21e33d193e9357c.md)
 
-# <Field.Text />
+## <Field.Text />
 
-# <Field.Number />
+## <Field.Number />
 
-# <Field.Date />
+## <Field.Date />
 
-# <Field.Select />
+## <Field.Select />
 
-# <Field.Uploader />
+## <Field.Uploader />
 
-# <Field.Icon/>
+## <Field.Icon/>
 
-# <Field.Location/>
+## <Field.Location/>
 
 You can add headings and subheadings in one of two ways:
 
@@ -142,7 +144,7 @@ You can add headings and subheadings in one of two ways:
     - Create a toggle by typing `/toggle` and pressing `enter`.
     - You can add anything to toggles, including images and embeds.
 
-## Callout Blocks
+### Callout Blocks
 
 <aside>
 💡 Create a callout block like this by typing `/call` and pressing `enter`.
