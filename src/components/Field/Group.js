@@ -30,8 +30,8 @@ const schemaProccessor = (parentNames, schema, selectedFields) => {
           label,
           hidden,
           readOnly,
-          component
-        }
+          component,
+        },
       });
     });
   } else {
@@ -74,8 +74,8 @@ const schemaProccessor = (parentNames, schema, selectedFields) => {
             label,
             hidden,
             readOnly,
-            component
-          }
+            component,
+          },
         });
       });
     });
@@ -92,7 +92,7 @@ const fieldCreator = {
   uploader: (props) => <Uploader key={props.name} {...props} />,
   location: (props) => <Location key={props.name} {...props} />,
   icon: (props) => <Icon key={props.name} {...props} />,
-  custom: ({ component: { Body }, ...props }) => <Body {...props} />
+  custom: ({ component: { Body }, ...props }) => <Body {...props} />,
 };
 
 const Group = ({ names, selectedFields, children }) => {
@@ -100,15 +100,13 @@ const Group = ({ names, selectedFields, children }) => {
 
   return schema ? (
     <>
-      {schemaProccessor(
-        names,
-        schema,
-        selectedFields
-      ).map(({ type, ...rest }) =>
-        fieldCreator[type](
-          rest.component ? { ...rest, ...rest.component.props } : rest
-        )
-      )}
+      {(names || selectedFields) &&
+        schemaProccessor(names, schema, selectedFields).map(
+          ({ type, ...rest }) =>
+            fieldCreator[type](
+              rest.component ? { ...rest, ...rest.component.props } : rest
+            )
+        )}
     </>
   ) : (
     <Form.Group>{children}</Form.Group>
