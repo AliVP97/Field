@@ -11,16 +11,19 @@ const App = () => {
   const formik = useFormik({
     // enable when you're on a edit mode
     // enableReinitialize: true,
-    initialValues: { firstName: "" },
-    validationSchema: validationSchema
+    initialValues: {},
+    validationSchema: validationSchema,
   });
-
-  console.log(isFormGroup);
 
   return (
     <FormikProvider value={{ validationSchema, ...formik }}>
+      <h2>{isFormGroup ? "<Field.Group />" : "<Field />"}</h2>
       <Form>
         {isFormGroup ? (
+          <Field.Group
+            names={["firstName", "workExperience", "birthday", "resume"]}
+          />
+        ) : (
           <>
             {/* Regular Text Field */}
             <Field.Text
@@ -47,10 +50,6 @@ const App = () => {
               acceptFormat="image/*"
             />
           </>
-        ) : (
-          <Field.Group
-            name={["firstName", "workExperience", "birthday", "resume"]}
-          />
         )}
       </Form>
       <br />
@@ -59,7 +58,7 @@ const App = () => {
         <input
           id="isFormGroup"
           type="checkbox"
-          onChange={(e) => setIsFormGroup(e.target.value === "true")}
+          onChange={(e) => setIsFormGroup(e.target.checked === true)}
         />
       </div>
     </FormikProvider>
