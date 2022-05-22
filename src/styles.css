@@ -9,6 +9,8 @@
   display: flex;
   flex-direction: column;
   row-gap: 15px;
+  width: 50vw;
+  margin: auto;
 }
 
 #root > form div {
